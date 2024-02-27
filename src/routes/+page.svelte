@@ -2,17 +2,23 @@
     import {supabase} from '$lib/supabase';
 
     let promise = supabase.from("countries").select();
+
+    let countries = [];
+    promise.then((result) => {
+        countries = result.data;
+    });
 </script>
 
 <h1>Aufgaben:</h1>
-<ul><li>anstatt eines JS-Objekts,
-    das auf der Seite dargestellt wird,
-    möchte ich eine Liste aller Länder</li>
-    <li>daisy ui loading icon</li>
+
+<ul>
+    {#each countries as country}
+        <li>{country.name}</li>
+    {/each}
 </ul>
 
 {#await promise}
-<div>... loading
+<div>
     <span class="loading loading-spinner loading-lg"></span>
 </div>
 {:then result}
