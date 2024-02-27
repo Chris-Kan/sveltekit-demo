@@ -8,9 +8,9 @@
         countries = result.data;
     });
 </script>
-
+<div class="prose">
 <h1>Aufgaben:</h1>
-
+</div>
 <ul>
     {#each countries as country}
         <li>{country.name}</li>
