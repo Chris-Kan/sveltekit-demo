@@ -11,7 +11,18 @@
 <div class="prose">
 <h1>Aufgaben:</h1>
 </div>
-<ul>
+<style>
+    .country-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .country-list li {
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<ul class="country-list">
     {#each countries as country}
         <li>{country.name}</li>
     {/each}
