@@ -3,6 +3,7 @@
     import type { AuthSession } from '@supabase/supabase-js'
     import { supabase } from '$lib/supabase'
     import { session } from '$lib/store'
+    import Avatar from '$lib/Avatar.svelte'
   
     let loading = false
     let username: string | null = null
@@ -69,6 +70,7 @@
   </script>
   
   {#if $session}
+  <Avatar size={150} url="https://url.to.picture" />
   <form on:submit|preventDefault="{updateProfile}" class="form-widget">
     <div>Email: {$session.user.email}</div>
     <div>
